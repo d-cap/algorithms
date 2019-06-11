@@ -3,7 +3,7 @@ pub fn calculate_factoring(a: u64) -> Vec<u64> {
     let mut rest = a;
     while rest % 2 == 0 {
         result.push(2);
-        rest = rest / 2;
+        rest /= 2;
     }
 
     let mut next_number = 3;
@@ -11,7 +11,7 @@ pub fn calculate_factoring(a: u64) -> Vec<u64> {
     while next_number <= rest {
         if rest % next_number == 0 {
             result.push(next_number);
-            rest = rest / next_number;
+            rest /= next_number;
         }
 
         next_number += 1;
@@ -39,9 +39,9 @@ fn is_prime(n: u64) -> bool {
         if n % i == 0 || n % (i + 2) == 0 {
             return false;
         }
-        i = i + 6
+        i += 6
     }
-    return true;
+    true
 }
 
 #[cfg(test)]
@@ -53,7 +53,10 @@ mod tests {
     fn should_calculate_factoring() {
         assert_eq!(vec![2, 3], calculate_factoring(6));
         assert_eq!(vec![2, 2, 3, 17], calculate_factoring(204));
-        assert_eq!(vec![2, 3, 3, 5, 3607, 3803], calculate_factoring(1234567890));
+        assert_eq!(
+            vec![2, 3, 3, 5, 3607, 3803],
+            calculate_factoring(1234567890)
+        );
         //assert_eq!(vec![2, 3, 9, 21491747, 106377431], calculate_factoring(123456789012345678));
         assert_eq!(vec![5, 7, 7], calculate_factoring(245));
     }

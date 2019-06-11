@@ -13,6 +13,9 @@ mod tests {
         assert_eq!(60, calculate_lcm(12, 15));
         assert_eq!(1716, calculate_lcm(132, 156));
         assert_eq!(20000, calculate_lcm(10000, 20000));
-        assert_eq!(10005276862774952840, calculate_lcm(10003214140, 20004124120));
+        assert_eq!(
+            10005276862774952840,
+            calculate_lcm(10003214140, 20004124120)
+        );
     }
 }
