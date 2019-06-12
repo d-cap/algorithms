@@ -8,7 +8,7 @@ impl<T> TriangularArray<T>
 where
     T: Default + Clone,
 {
-    pub fn with_capacity(size: usize) -> Result<TriangularArray<T>, String> {
+    pub fn with_capacity(size: usize) -> Result<Self, String> {
         if size > 1 {
             let size = size * (size - 1) / 2;
             Ok(TriangularArray {
