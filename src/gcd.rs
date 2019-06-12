@@ -13,7 +13,7 @@ pub fn calculate_gcd(a: u64, b: u64) -> u64 {
 
 #[cfg(test)]
 mod tests {
-    use crate::gcd::calculate_gcd;
+    use super::calculate_gcd;
 
     #[test]
     fn should_calculate_gcd() {

@@ -5,13 +5,13 @@ pub struct SparseSingleLinkedList<T: Default + Clone> {
 
 pub struct SparseRow<T: Default + Clone> {
     index: usize,
-    next: SparseRow<T>,
-    values: SparseNodeValue<T>
+    next: Box<SparseRow<T>>,
+    values: Box<SparseNodeValue<T>>,
 }
 
 pub struct SparseNodeValue<T: Default + Clone> {
     index: usize,
-    next: SparseNodeValue<T>,
+    next: Box<SparseNodeValue<T>>,
     value: T,
 }
 
@@ -25,7 +25,7 @@ where
         }
     }
 
-    pub fn insert(&mut self, row_index, usize, column_index: usize)
+    pub fn insert(&mut self, row_index: usize, column_index: usize) {}
 
     pub fn get_value(&self, row_index: usize, column_index: usize) -> Option<&T> {
         for i in 0..self.sparse_list.len() {

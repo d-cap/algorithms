@@ -60,7 +60,7 @@ where
 
 #[cfg(test)]
 mod tests {
-    use crate::triangular_array::TriangularArray;
+    use super::TriangularArray;
 
     #[test]
     fn should_not_work_with_empty_array() {

@@ -46,8 +46,8 @@ fn is_prime(n: u64) -> bool {
 
 #[cfg(test)]
 mod tests {
-    use crate::factoring::calculate_factoring;
-    use crate::factoring::is_prime;
+    use super::calculate_factoring;
+    use super::is_prime;
 
     #[test]
     fn should_calculate_factoring() {

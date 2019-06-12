@@ -17,7 +17,7 @@ impl Iterator for LinearCongruentialGenerators {
 
 #[cfg(test)]
 mod tests {
-    use crate::lcg::LinearCongruentialGenerators;
+    use super::LinearCongruentialGenerators;
 
     #[test]
     fn should_generate_correct_sequence() {
